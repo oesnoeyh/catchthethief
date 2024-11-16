@@ -80,11 +80,11 @@ document.querySelector('#payment-section .btn').addEventListener('click', functi
         return;
     }
 
-    if (inputCode === '1234') {
+    if (inputCode === '1234') { // 인증 성공
         alert('인증 성공! 파일을 다운로드합니다.');
         const link = document.createElement('a');
-        link.href = 'yourfile.exe';
-        link.download = 'yourfile.exe';
+        link.href = 'https://drive.google.com/uc?id=1DU-K4dgOFtiWLtmfzlHabLfc2GUTb6Oy&export=download'; // Google Drive 다운로드 링크
+        link.download = 'main.exe'; // 다운로드 파일 이름
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -92,3 +92,4 @@ document.querySelector('#payment-section .btn').addEventListener('click', functi
         alert('인증 실패. 관리자에게 문의하세요.');
     }
 });
+
