@@ -1,5 +1,4 @@
-# Catch The Thief ! 
-## 무인점포 절도 탐지 솔루션 
+# Catch The Thief ! : 무인점포 절도 탐지 솔루션 
 
 [![Catch The Thief](./first.png)](https://oesnoeyh.github.io/catchthethief/)
 
