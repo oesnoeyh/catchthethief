@@ -72,7 +72,7 @@ document.getElementById('login-form').addEventListener('submit', function (event
 });
 
 // 인증 후 파일 다운로드 처리
-document.querySelector('#payment-section .btn').addEventListener('click', function () {
+function downloadFile() {
     const inputCode = document.querySelector('#payment-section input[type="text"]').value.trim();
 
     if (!inputCode) {
@@ -80,19 +80,14 @@ document.querySelector('#payment-section .btn').addEventListener('click', functi
         return;
     }
 
-    if (inputCode === '1234') { // 인증 성공
-        alert('인증 성공! 파일을 다운로드합니다.');
-        const link = document.createElement('a');
-        link.href = 'https://raw.githubusercontent.com/username/repository-name/branch-name/main.exe'; // GitHub Raw 링크
-        link.download = 'main.exe'; // 다운로드 파일 이름
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    if (inputCode === '1234') {
+        alert('인증 성공! 파일 다운로드 페이지로 이동합니다.');
+        // 구글 드라이브 폴더 링크
+        window.open("https://drive.google.com/drive/folders/12556fLD2Cnwtu3k5VYRXl2pP3sul4ewl?usp=sharing", "_blank");
     } else {
         alert('인증 실패. 관리자에게 문의하세요.');
     }
-});
-
+}
 
 // 팝업 닫기 함수
 function closePopup() {
