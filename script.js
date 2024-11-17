@@ -93,3 +93,25 @@ document.querySelector('#payment-section .btn').addEventListener('click', functi
     }
 });
 
+// 팝업 닫기 함수
+function closePopup() {
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach(popup => popup.classList.add('hidden'));
+}
+
+// 첫 화면으로 돌아가는 함수
+function showMain() {
+    // 모든 섹션 숨기기
+    document.getElementById('pricing-section').classList.add('hidden');
+    document.getElementById('payment-section').classList.add('hidden');
+
+    // 팝업 닫기
+    closePopup();
+
+    // 첫 화면 보이기
+    document.getElementById('intro-section').classList.remove('hidden');
+
+    // 스크롤 맨 위로 이동
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
