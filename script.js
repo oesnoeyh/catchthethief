@@ -81,9 +81,14 @@ function downloadFile() {
     }
 
     if (inputCode === '1234') {
-        alert('인증 성공! 파일 다운로드 페이지로 이동합니다.');
-        // 구글 드라이브 폴더 링크
-        window.open("https://drive.google.com/drive/folders/12556fLD2Cnwtu3k5VYRXl2pP3sul4ewl?usp=sharing", "_blank");
+        alert('인증 성공! 파일을 다운로드합니다.');
+        // Google Drive 직접 다운로드 링크
+        const link = document.createElement('a');
+        link.href = "https://drive.google.com/uc?id=1DU-K4dgOFtiWLtmfzlHabLfc2GUTb6Oy&export=download";
+        link.download = "main.exe"; // 다운로드될 파일명
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     } else {
         alert('인증 실패. 관리자에게 문의하세요.');
     }
